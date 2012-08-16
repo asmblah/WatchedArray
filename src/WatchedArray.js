@@ -1,4 +1,4 @@
-var WArray = (function() {
+define(function() {
 	var createWatchedArray = function() {
 		var MAX_SIGNED_INT_VALUE = Math.pow(2, 32) - 1,
 		hasOwnProperty = Object.prototype.hasOwnProperty;
@@ -24,7 +24,7 @@ var WArray = (function() {
 			return maxIndex;
 		};
 
-		return function(methods) {
+		return (function(methods) {
 			var length = 0;
 			methods = methods || { };
 
@@ -48,7 +48,7 @@ var WArray = (function() {
 				value: Array.prototype.join
 			};
 			return Object.create(Array.prototype, methods);
-		};
+		})();
 	};
 
 	var methods = {
@@ -69,4 +69,4 @@ var WArray = (function() {
 		}
 		return arr;
 	};
-})();
+});
