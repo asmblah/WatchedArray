@@ -1,4 +1,4 @@
-define(function() {
+define(["../ext/EventEmitter/src/EventEmitter"], function(EventEmitter) {
 	var createWatchedArray = function() {
 		var MAX_SIGNED_INT_VALUE = Math.pow(2, 32) - 1,
 		hasOwnProperty = Object.prototype.hasOwnProperty;
