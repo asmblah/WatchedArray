@@ -59,12 +59,7 @@ define(["../ext/EventEmitter/src/EventEmitter"], function(EventEmitter) {
 											get: function() {
 												emitter.emit('get', index, _array[index]);
 												return _array[index];
-											}
-										});
-									})();
-									(function() {
-										var index = i;
-										Object.defineProperty(self, i, {
+											},
 											set: function(val) {
 												_array[index] = val;
 												emitter.emit('set', index, val);
